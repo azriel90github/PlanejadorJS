@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <title>plann.er</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+    <script>dayjs.locale('pt-br')</script>
+
+</head>
+<body>
+    <div id="app">
+        
+        <form onsubmit="salvarAtividade(event)">
+            <img src="assets/logo.svg" alt="logo plann.er" id="logo">
+            <div id="viagem" class="card-bg">
+                <img src="assets/destino.svg" alt="ponteiro de destino da viagem">
+                <p>Luanda, LA - Angola</p>
+            </div>
+
+            <div class="conjunto_campos">
+                <div class="campo">
+                    <img src="assets/etiqueta_atividade.svg" alt="etiqueta para as atividades">
+
+                    <input type="text" placeholder="Qual a atividade?" name="atividade" required>
+                </div>
+                <div class="campo">
+                    <img src="assets/calendario.svg" alt="calendario">
+                    <select name="dia">
+                        <option value="2024-03-19">19 de março</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <img src="assets/relogio.svg" alt="relogio">
+                    <select name="hora">
+                        <option value="10:00">10:00</option>
+                    </select>
+                </div>
+            </div style="color: red;">
+            <button>Salvar atividade</button>
+        </form>
+        <main>
+            <h1>Atividades</h1>
+            <section></section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

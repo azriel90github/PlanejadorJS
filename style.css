@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, input, select, button, option{
+    background-color: #0c0c0c;
+    color: #FAFAFA;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+}
+
+/* classe usada nas atividades e no destino da viagem */
+.card-bg {
+    background: #18181B;
+
+    box-shadow: 
+    0px 8px 8px rgba(0, 0, 0, 0.1), 
+    0px 4px 4px rgba(0, 0, 0, 0.1), 
+    0px 2px 2px rgba(0, 0, 0, 0.1), 
+    0px 0px 0px 1px rgba(0, 0, 0, 0.1), 
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03), 
+    inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+    
+    border-radius: 12px;
+}
+
+/* app */
+#app {
+    padding: 40px 20px;
+    max-width: 350px;
+    margin: auto;
+}
+
+#logo {
+    margin: 0 auto 20px;
+    width: 100px;
+}
+
+/* form - destino da viagem */
+
+#viagem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 22px 16px;
+    margin-bottom: 32px;
+
+    font-size: 14px;
+}
+
+#viagem p {
+    width: 100%;
+}
+
+/* form - conjunto_campos */
+input, select {
+    all: unset;
+}
+
+input, select, button {
+    width: 100%;
+}
+
+.conjunto_campos {
+    display: grid;
+    gap: 8px;
+}
+
+.campo {
+    padding: 18px;
+    border: 1px solid #27272A;
+    border-radius: 8px;
+    background-color: #09090B;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.campo:focus-within {
+    outline: 2px solid #007D9C;
+}
+
+button {
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: none;
+    background-color: #007D9C;
+    border-radius: 8px;
+
+    color: #FAFAFA;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #004455;
+}
+
+/* main */
+
+main {
+    margin-top: 32px;
+}
+
+main h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+main section {
+    display: grid;
+    gap: 12px;
+}
+
+main section input[type="checkbox"] {
+    position: absolute;
+    inset: 0;
+}
+
+main section .card-bg {
+    position: relative;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    cursor: pointer;
+    animation: aparecer 300ms;
+
+}
+
+/* quando o campo estiver checked, o icone ativo irá aparecer */
+main section .card-bg:has(:checked) .ativo, 
+/* por padrão o icone inativo estará aparecendo */
+main section .card-bg .inativo {
+    display: block;
+}
+
+/* quando o campo estiver checked, o icone inativo não irá aparecer */
+main section .card-bg:has(:checked) .inativo, 
+/* por padrão o icone ativo estará escondido */
+main section .card-bg .ativo {
+    display: none;
+}
+
+section .card-bg > div {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+section time {
+    font-size: 14px;
+    color: #A1A1AB;
+    text-align: right;
+}
+
+time.full {
+    display: none
+}
+
+/* animação */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+}
+
+/* responsividade para desktop */
+@media (width > 1024px) {
+    #app {
+        display: flex;
+        max-width: 960px;
+        gap: 32px;
+    }
+
+    main {
+        margin-top: 0;
+        flex: 1;
+    }
+
+    main h1 {
+        text-align: left;
+    }
+
+    time.full {
+        display: block;
+    }
+
+    time.short {
+        display: none;
+    }
+}
+
+
